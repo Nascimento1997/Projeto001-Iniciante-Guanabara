@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        nome = prompt('Qual é o seu nome? ') // Guarda o seu nome
+        salario = Number.parseFloat(prompt('Digite aqui o seu salário: ')) // Guarda salário
+        salario.toFixed(2) // Transforma o número float em duas casas decimais
+        var s1 = salario.toFixed('pt-BR',{style:'currency', currency:'BRL'}) // Transforma os números decimais em moeda corrente R$ (reais)
+        
+        renda1 = Number.parseFloat(prompt('Digite aqui a sua renda complementar: ')) // adiciona renda extra
+        renda2 = Number.parseFloat(prompt('Possui mais alguma renda? Se sim, digite abaixo: ')) // adiciona renda extra
+        
+        rendat = renda1 + renda2 // soma das rendas extras
+        rendat.toFixed(2) // Transforma o número float em duas casas decimais
+        var rendat1 = rendat.toFixed('pt-BR',{style:'currency', currency:'BRL'}) // Transforma os números decimais em moeda corrente R$ (reais)
+        
+        ganhos = salario + renda1 + renda2 // soma de todos os ganhos
+        ganhos.toFixed(2) // Transforma o número float em duas casas decimais
+        var g1 = ganhos.toFixed('pt-BR',{style:'currency', currency:'BRL'}) // Transforma os números decimais em moeda corrente R$ (reais)
+
+        despesas = Number.parseFloat(prompt('Digite aqui a sua despesa: ')) // insira aqui as despesas 
+        despesas.toFixed(2) // Transforma o número float em duas casas decimais
+        var d1 = despesas.toFixed('pt-BR',{style:'currency', currency:'BRL'}) // Transforma os números decimais em moeda corrente R$ (reais)
+
+        saldo = ganhos - despesas // Calcula o saldo
+        saldo.toFixed(2) // Transforma o número float em duas casas decimais
+        var saldo1 = saldo.toFixed('pt-BR',{style:'currency', currency:'BRL'}) // Transforma os números decimais em moeda corrente R$ (reais)
+
+        percentual = despesas / ganhos * 100
+        percentual.toFixed(2)
+
+        percentual1 = percentual > 50?'Comprometido':'Livre'
+        document.write(`Olá, ${nome}! O seu salário é ${s1}, suas outras receitas somam o total de ${rendat1} e a sua despesa é ${d1}, correspondente a ${percentual}% do seu salário. A sua situação financeira é: ${percentual1}`)
+    </script>
+    
+</body>
+</html>
